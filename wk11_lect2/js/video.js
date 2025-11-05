@@ -1,0 +1,62 @@
+var video = document.querySelector("#player1")
+
+window.addEventListener("load", function() {
+	console.log("Good job opening the window")
+
+});
+
+document.querySelector("#play").addEventListener("click", function() {
+	console.log("Play Video");
+	video.play()
+
+});
+
+document.querySelector("#pause").addEventListener("click", function() {
+	console.log("Pause Video");
+	video.pause();
+
+});
+
+document.querySelector("#slower").addEventListener("click", function() {
+	console.log("In Slower");
+	console.log("Current speed is ", video.playbackRate);
+	video.playbackRate *= 0.5;
+	console.log("New speed is ", video.playbackRate)
+	
+});
+
+document.querySelector("#faster").addEventListener("click", function() {
+	console.log("In Faster");
+	console.log("Current speed is ", video.playbackRate);
+	video.playbackRate *= 1.2;
+	console.log("New speed is ", video.playbackRate)
+	
+});
+
+document.querySelector("#skip").addEventListener("click", function() {
+	console.log("Skipping");
+	console.log("Current location is ", video.currentTime)
+	video.currentTime += 10;
+	console.log("New location is ", video.currentTime)
+	video.loop = true; 
+	
+});
+
+document.querySelector("#mute").addEventListener("click", function() {
+	console.log("Muting");
+	video.muted = !video.muted; 
+	if (video.muted) {
+		document.querySelector("#mute").innerHTML = "Unmute";
+	}
+	else { 
+		document.querySelector("#mute").innerHTML = "Mute";
+	}
+
+	
+});
+
+
+
+
+
+
